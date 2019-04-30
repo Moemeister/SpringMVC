@@ -1,5 +1,7 @@
+<%@page import="com.uca.capas.domain.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +18,25 @@
 			<th>Experiencia</th>
 		</tr>
 		<tr>
-			<td>${student.name}</td>
-			<td>${student.lastName}</td>
-			<td>${student.bDate}</td>
-			<td>${student.career}</td>
-			<td>${student.experience}</td>
+			<td><c:out value="${student.name}"/></td>
+			<td><c:out value="${student.lastName}"/></td>
+			<td><c:out value="${student.bDate}"/></td>
+			<td><c:out value="${student.career}"/></td>
+			<td><c:out value="${student.experience}"/></td>
 		</tr>
 	
 	</table>
+	<br><br>
+	<c:set value="${student.career}" var="carrera"/>
+	<c:set value="Informatica" var="compCarrera"/>
+	<c:choose>
+	    <c:when test="${carrera == compCarrera}">
+	        <c:out value="YAY ${carrera}! :D"/>
+	    </c:when>
+	    <c:otherwise>
+        	<c:out value="No es info :("/>
+    </c:otherwise>
+    </c:choose>
+    
 </body>
 </html>
