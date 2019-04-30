@@ -24,8 +24,8 @@ public class SpringConfiguration implements WebMvcConfigurer {
 			
 		}
 		
-		/*@Bean
+		@Bean
 		public MappingJackson2HttpMessageConverter jsonConverter() {
 			return new MappingJackson2HttpMessageConverter();
-		}*/
+		}
 }
